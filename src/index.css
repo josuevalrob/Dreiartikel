@@ -27,6 +27,81 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Start Screen ─── */
+.start-screen {
+  animation: slideUp 0.5s ease-out;
+}
+
+.start-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.25rem 0;
+}
+
+.start-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-hint);
+  margin: 0 0 2rem 0;
+}
+
+.rules-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  text-align: left;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+}
+
+.rules-card h3 {
+  margin: 0.75rem 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.rules-card h3:first-child {
+  margin-top: 0;
+}
+
+.rules-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.rules-card li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--color-hint);
+  line-height: 1.5;
+}
+
+.rules-card strong {
+  color: var(--color-text);
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 1rem 3.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5);
+}
+
 body {
   margin: 0;
   display: flex;
@@ -60,6 +135,91 @@ h1.active-word {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300;
+}
+
+.app-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-hint);
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+
+/* ─── Filter Dropdown (replaces horizontal bar) ─── */
+.filter-dropdown {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-surface-hover);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-toggle:hover {
+  background: var(--color-surface-hover);
+}
+
+.filter-arrow {
+  transition: transform 0.2s;
+  font-size: 0.9rem;
+}
+
+.filter-arrow.open {
+  transform: rotate(180deg);
+}
+
+.filter-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-hover);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+  animation: slideUp 0.15s ease-out;
+}
+
+.filter-menu-item {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--color-hint);
+  padding: 0.7rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.filter-menu-item:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.filter-menu-item.active {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
 }
 
 .scoreboard {
@@ -248,6 +408,33 @@ h1.active-word {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.answer-timer-track {
+  width: 100%;
+  height: 4px;
+  background: var(--color-surface);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.answer-timer-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-success), #f59e0b, var(--color-error));
+  border-radius: 2px;
+  animation: timerShrink 3s linear forwards;
+}
+
+@keyframes timerShrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.best-streak {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
 .game-over {
   background: var(--color-surface);
   padding: 3rem;
@@ -259,4 +446,155 @@ h1.active-word {
   font-size: 2.5rem;
   color: var(--color-success);
   margin-bottom: 1rem;
+}
+
+/* Keyboard hint on option buttons */
+.key-hint {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-bottom: 2px;
+}
+
+.key-hint-inline {
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+
+/* Feedback button row */
+.feedback-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* Time bank display */
+.time-bank {
+  color: #60a5fa;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Swipe Hints (mobile only, shown on card) ─── */
+.swipe-hints {
+  display: none; /* hidden on desktop by default */
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.swipe-hint {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-hint);
+  opacity: 0.6;
+}
+
+.swipe-hint.left { color: #60a5fa; }
+.swipe-hint.down { color: #f472b6; }
+.swipe-hint.right { color: #34d399; }
+
+/* Swipe animations on card */
+.word-card.swipe-left {
+  animation: swipeOutLeft 0.3s ease-out;
+}
+.word-card.swipe-right {
+  animation: swipeOutRight 0.3s ease-out;
+}
+.word-card.swipe-down {
+  animation: swipeOutDown 0.3s ease-out;
+}
+
+@keyframes swipeOutLeft {
+  0% { transform: translateX(0) rotate(0); opacity: 1; }
+  50% { transform: translateX(-40px) rotate(-3deg); opacity: 0.7; }
+  100% { transform: translateX(0) rotate(0); opacity: 1; }
+}
+
+@keyframes swipeOutRight {
+  0% { transform: translateX(0) rotate(0); opacity: 1; }
+  50% { transform: translateX(40px) rotate(3deg); opacity: 0.7; }
+  100% { transform: translateX(0) rotate(0); opacity: 1; }
+}
+
+@keyframes swipeOutDown {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(20px); opacity: 0.7; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ─── Mobile Responsive ─── */
+@media (max-width: 600px) {
+  #root {
+    padding: 1rem;
+  }
+
+  h1.active-word {
+    font-size: 2.5rem;
+  }
+
+  .hint-text {
+    font-size: 1.1rem;
+  }
+
+  .start-title {
+    font-size: 2.2rem;
+  }
+
+  .rules-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .scoreboard {
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .next-btn,
+  .know-why-btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .option-btn {
+    padding: 0.75rem 0;
+    font-size: 1.2rem;
+  }
+
+  .replay-btn {
+    right: -40px;
+  }
+
+  .replay-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Touch devices: show swipe hints, hide keyboard hints */
+@media (hover: none) and (pointer: coarse) {
+  .swipe-hints {
+    display: flex;
+  }
+
+  .key-hint,
+  .key-hint-inline {
+    display: none;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .option-btn {
+    padding: 0.6rem 0;
+    font-size: 1.1rem;
+  }
 }
