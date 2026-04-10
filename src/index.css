@@ -110,6 +110,12 @@ body {
   min-height: 100vh;
   justify-content: center;
   background: radial-gradient(circle at top right, #1e293b, var(--color-bg));
+  overscroll-behavior-y: none;
+}
+
+.word-card {
+  touch-action: none;
+  width: 100%;
 }
 
 #root {
