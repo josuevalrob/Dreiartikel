@@ -24,19 +24,16 @@ if (window.speechSynthesis) {
 export function playWord(word: string) {
     if (!window.speechSynthesis) return;
 
-    // Retry finding voice if not found yet (sometimes voiceschanged does not fire properly)
-    if (!bestVoice && !initialized) {
+    // Always retry finding a German voice if we don't have one yet
+    if (!bestVoice) {
         loadVoices();
     }
 
     const utterance = new SpeechSynthesisUtterance(word);
-    
+    utterance.lang = 'de-DE';
+
     if (bestVoice) {
         utterance.voice = bestVoice;
-        utterance.lang = bestVoice.lang;
-    } else {
-        // Fallback lang property directly if voice object not loaded
-        utterance.lang = 'de-DE';
     }
 
     // Cancel any ongoing speech to make it snappy
