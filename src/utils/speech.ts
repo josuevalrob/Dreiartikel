@@ -1,5 +1,4 @@
 let bestVoice: SpeechSynthesisVoice | null = null;
-let initialized = false;
 
 function loadVoices() {
     const voices = window.speechSynthesis.getVoices();
@@ -9,7 +8,6 @@ function loadVoices() {
         // Try to find a premium voice or just take the first one
         bestVoice = germanVoices.find(v => v.name.includes('Premium') || v.name.includes('Google')) || germanVoices[0];
     }
-    initialized = true;
 }
 
 // Set up the listener for voices changing (critical for Chrome and others on first load)
