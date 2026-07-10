@@ -58,7 +58,29 @@ npm run preview  # preview the production build
 
 ## Roadmap
 
-TODO
+The steps below implement The German Adventure (V1) on top of the existing
+codebase. They are ordered by dependency and sized so each one can be done in a
+single short session. To run one, ask Claude: *"Do Roadmap step N"*.
+
+**Already in place** (no work needed): the scrolling [Map](#map) with nodes and
+paths (`src/map.json`, `MapScreen`), story letters with fill-in-the-blank
+reading (`stories.ts`, `StoryCard`), the challenge game loop
+(`useGameState.ts`), and the noun dataset (`nouns.json`).
+
+| Step | Status | Task | What it delivers | Depends on |
+|------|--------|------|------------------|------------|
+| 1 | ✅ Done | **Vocabulary List store** | New pure module `src/vocabulary.ts`: the `VocabularyEntry` shape (word, gender, plural — each with its own Learning Score 0–100), load/save via `localStorage` (the client-side stand-in for `VocabularyList.json`), `addWord` (score 0, no duplicates), and a JSON export helper. Plus `vocabulary.test.ts`. Touches no UI. | — |
+| 2 | ⬜ | **Learning Algorithm** | New pure module `src/learning.ts`: `selectWord(list, attribute, recentWords)` — weighted roulette where weight = 100 − Learning Score, skipping the last 6 challenged words — and `applyResult` (+15 correct / −15 wrong, clamped to 0–100). Plus `learning.test.ts` (invariant-based, per repo convention). | Step 1 |
+| 3 | ⬜ | **Translator Support** | In the [Story Box](#story-box): tapping any word shows its translation (from `nouns.json`, falling back to a small story-glossary). Every looked-up word is added to the Vocabulary List with Learning Score 0. | Step 1 |
+| 4 | ⬜ | **Challenge Game ↔ Vocabulary List** | The Challenge Game pulls its words through `selectWord` instead of shuffling the whole pool, updates Learning Scores after every answer, and tops the list up from `nouns.json` when all words are learned or the player is on a high streak. | Steps 1–2 |
+| 5 | ⬜ | **Map progression** | Points are locked until all previous points on the path are completed; completion is persisted in `localStorage` so progress survives reloads. Story Points render as blue squares, Challenge Points as red circles. | — |
+| 6 | ⬜ | **Story Box portrait** | The pixelated profile picture of the speaking character in the Story Box, per story. | — |
+| 7 | ⬜ | **Polish & verify** | Run the full app end-to-end: story → translator → vocabulary → challenge → map advance. Fix seams, update this README's Project structure table, and bump the [Table of versions](#table-of-versions). | Steps 1–6 |
+
+> **Note on the pseudo-code:** in the [Learning Algorithm](#learning-algorithm-section)
+> section, `TotalWeight` sums the raw attribute score but the roulette counter
+> sums `100 − score`. Step 2 implements the consistent version (both use
+> `100 − score`, i.e. low-score words are picked more often).
 
 
 ## <a id="learning-algorithm-section"></a>Learning Algorithm
