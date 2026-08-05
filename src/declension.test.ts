@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { articleFor, optionsForCase, declineNoun, type Case } from './declension';
+import { articleFor, optionsForCase, declineNoun, caseForSurface, type Case } from './declension';
 import { articleForGender, type Gender } from './rules';
 
 const GENDERS: Gender[] = ['m', 'f', 'n'];
@@ -50,6 +50,52 @@ describe('optionsForCase', () => {
             const opts = optionsForCase(c);
             for (const g of GENDERS) {
                 expect(opts, `${c}/${g}`).toContain(articleFor(g, c, 'sg'));
+            }
+        }
+    });
+});
+
+describe('caseForSurface — reading the case off a surface article', () => {
+    it('masculine is fully unambiguous (one case per article)', () => {
+        expect(caseForSurface('m', 'der')).toBe('nom');
+        expect(caseForSurface('m', 'den')).toBe('akk');
+        expect(caseForSurface('m', 'dem')).toBe('dat');
+        expect(caseForSurface('m', 'des')).toBe('gen');
+    });
+
+    it('feminine is ambiguous: die→[nom,akk], der→[dat,gen]', () => {
+        expect(caseForSurface('f', 'die')).toEqual(['nom', 'akk']);
+        expect(caseForSurface('f', 'der')).toEqual(['dat', 'gen']);
+    });
+
+    it('neuter: das→[nom,akk], dem→dat (unambiguous), des→gen', () => {
+        expect(caseForSurface('n', 'das')).toEqual(['nom', 'akk']);
+        expect(caseForSurface('n', 'dem')).toBe('dat');
+        expect(caseForSurface('n', 'des')).toBe('gen');
+    });
+
+    it('plural (number-aware): den→dat, die→[nom,akk], der→gen', () => {
+        // The number-aware key is what stops "den <plural>" being misread as
+        // masculine accusative singular.
+        expect(caseForSurface('pl', 'den')).toBe('dat');
+        expect(caseForSurface('pl', 'die')).toEqual(['nom', 'akk']);
+        expect(caseForSurface('pl', 'der')).toBe('gen');
+    });
+
+    it('returns null when the article never appears in that column', () => {
+        expect(caseForSurface('m', 'die')).toBeNull();   // 'die' is never masculine
+        expect(caseForSurface('f', 'dem')).toBeNull();   // 'dem' is never feminine
+        expect(caseForSurface('n', 'den')).toBeNull();   // 'den' is never neuter
+    });
+
+    it('is a true inverse of articleFor for every cell', () => {
+        const columns: (Gender | 'pl')[] = ['m', 'f', 'n', 'pl'];
+        for (const col of columns) {
+            for (const c of ['nom', 'akk', 'dat', 'gen'] as Case[]) {
+                const article = col === 'pl' ? articleFor('m', c, 'pl') : articleFor(col, c, 'sg');
+                const got = caseForSurface(col, article);
+                const cases = Array.isArray(got) ? got : [got];
+                expect(cases, `${col}/${article} should include ${c}`).toContain(c);
             }
         }
     });

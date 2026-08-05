@@ -7,10 +7,11 @@ import {
     buildPluralRound,
     pickPluralRound,
     generatePluralRounds,
+    buildByPlural,
     PLURAL_PATTERNS,
     type PluralPattern,
 } from './plurals';
-import type { PracticeItem } from './data';
+import { generateItems, type PracticeItem } from './data';
 
 function item(partial: Partial<PracticeItem> & { word: string }): PracticeItem {
     return {
@@ -25,6 +26,8 @@ function item(partial: Partial<PracticeItem> & { word: string }): PracticeItem {
         pluralOnly: partial.pluralOnly,
         plural: partial.plural,
         pluralPattern: partial.pluralPattern,
+        level: partial.level ?? 1,
+        tags: partial.tags ?? [],
     };
 }
 
@@ -167,5 +170,41 @@ describe('pattern table', () => {
     it('lists exactly the eight regular shapes (foreign is stored, not generated)', () => {
         const expected: PluralPattern[] = ['e', 'umlaut-e', 'en', 'none', 'umlaut', 'er', 'umlaut-er', 's'];
         expect([...PLURAL_PATTERNS].sort()).toEqual([...expected].sort());
+    });
+});
+
+describe('buildByPlural (reverse plural index for the chapter parser)', () => {
+    const byPlural = buildByPlural();
+
+    it('maps a known plural surface form back to its base item', () => {
+        // Buch → Bücher; the parser must recover Buch from "die Bücher".
+        expect(byPlural.get('Bücher')?.word).toBe('Buch');
+    });
+
+    it('every entry round-trips: the key is the item’s own plural form', () => {
+        for (const [form, item] of byPlural) {
+            expect(pluralForm(item)).toBe(form);
+        }
+    });
+
+    it('contains exactly the dataset’s plural-capable nouns', () => {
+        const eligible = generateItems().filter(hasPlural);
+        // Map size ≤ eligible count (collisions collapse), and never larger.
+        expect(byPlural.size).toBeGreaterThan(0);
+        expect(byPlural.size).toBeLessThanOrEqual(eligible.length);
+        // Every eligible noun's plural form is resolvable.
+        for (const it of eligible) {
+            expect(byPlural.has(pluralForm(it))).toBe(true);
+        }
+    });
+
+    it('does not index plural-only nouns (no singular to drill)', () => {
+        const pluralOnly = generateItems().filter(i => i.pluralOnly);
+        for (const it of pluralOnly) {
+            // Its surface form may exist via another noun, but never points back
+            // to the plural-only item itself.
+            const hit = byPlural.get(it.word);
+            expect(hit?.word).not.toBe(it.word);
+        }
     });
 });

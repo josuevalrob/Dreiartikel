@@ -12,7 +12,7 @@
 //   the answer logic — they simply stand out as the one real form among decoys.
 
 import { genderHint, type Hint } from './hints';
-import { type PracticeItem } from './data';
+import { generateItems, type PracticeItem } from './data';
 import { shuffle, randomOf } from './utils/random';
 import { capitalize } from './utils/text';
 import type { PracticeRound } from './round';
@@ -192,4 +192,24 @@ export function pickPluralRound(pool: PracticeItem[]): PluralRound | null {
 /** Build a shuffled list of plural rounds covering every eligible noun once. */
 export function generatePluralRounds(pool: PracticeItem[]): PluralRound[] {
     return shuffle(pool.filter(hasPlural)).map(item => buildPluralRound(item));
+}
+
+/** Index every noun's PLURAL surface form back to its item — the reverse of
+ *  pluralForm. The chapter parser uses this to recognise a plural noun written
+ *  in prose ("die Bücher") and recover its base item (Buch), so it can detect
+ *  *number* before reading the case off the surface article.
+ *
+ *  Built over the whole dataset (not a filtered pool) so a chapter's words always
+ *  resolve regardless of the active noun filter. Singular-first resolution in the
+ *  parser means a form that is also some noun's singular is matched as that
+ *  singular before this map is consulted; on the rare plural↔plural collision the
+ *  first item wins (deterministic over generateItems' fixed order). */
+export function buildByPlural(): Map<string, PracticeItem> {
+    const byPlural = new Map<string, PracticeItem>();
+    for (const item of generateItems()) {
+        if (!hasPlural(item)) continue;
+        const form = pluralForm(item);
+        if (!byPlural.has(form)) byPlural.set(form, item);
+    }
+    return byPlural;
 }

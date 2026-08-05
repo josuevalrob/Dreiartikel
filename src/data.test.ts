@@ -57,6 +57,39 @@ describe('dataset integrity', () => {
     });
 });
 
+// The enrichment fields (level/tags + the story-generator fields) are hand-edited
+// in nouns.json over time. Guard their shape so a bad row fails loudly here, not
+// at runtime in a quest filter or the generator.
+describe('enrichment fields', () => {
+    const items = generateItems();
+
+    it('every item has an integer level >= 1', () => {
+        for (const item of items) {
+            expect(Number.isInteger(item.level), `${item.word} level`).toBe(true);
+            expect(item.level, `${item.word} level`).toBeGreaterThanOrEqual(1);
+        }
+    });
+
+    it('every item has a tags array of non-empty strings', () => {
+        for (const item of items) {
+            expect(Array.isArray(item.tags), `${item.word} tags`).toBe(true);
+            for (const tag of item.tags) {
+                expect(typeof tag, `${item.word} tag`).toBe('string');
+                expect(tag.length, `${item.word} empty tag`).toBeGreaterThan(0);
+            }
+        }
+    });
+
+    it('optional generator fields, when present, have the right type', () => {
+        for (const item of items) {
+            if (item.cefr !== undefined) expect(typeof item.cefr).toBe('string');
+            if (item.theme !== undefined) expect(typeof item.theme).toBe('string');
+            if (item.frequency !== undefined) expect(typeof item.frequency).toBe('number');
+            if (item.exampleSentence !== undefined) expect(typeof item.exampleSentence).toBe('string');
+        }
+    });
+});
+
 // Guard the curated lexical sets against typos: a word listed there that doesn't
 // exist in rawData is silently dead, so fail loudly.
 describe('curated lexical sets', () => {

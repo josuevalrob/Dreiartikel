@@ -39,6 +39,26 @@ export function optionsForCase(caseName: Case, number: GrammaticalNumber = 'sg')
     return Array.from(new Set(forms));
 }
 
+/** The reverse of the DEFINITE table: given a column (a gender, or 'pl' for
+ *  plural) and a surface definite article the author actually wrote, which
+ *  case(es) could it be? This is what lets the chapter parser read the case
+ *  straight off the prose ("mit dem Hund" → dat) instead of guessing.
+ *
+ *  Returns a single `Case` when the (column, article) pair is unambiguous
+ *  (masc is fully unambiguous: der→nom, den→akk, dem→dat, des→gen), an array of
+ *  cases when ambiguous (fem 'die' → [nom, akk]; fem 'der' → [dat, gen]; neut
+ *  'das' → [nom, akk]; plural 'die' → [nom, akk]), or `null` when the article
+ *  never appears in that column (e.g. 'dem' for a feminine noun).
+ *
+ *  Note Genitiv is in the table but out of scope for chapter drilling; callers
+ *  drop the 'gen' member (collapsing fem 'der' to dat under the no-genitive
+ *  authoring rule) rather than this function hiding it. */
+export function caseForSurface(column: Gender | 'pl', article: string): Case | Case[] | null {
+    const cases = (Object.keys(DEFINITE) as Case[]).filter(c => DEFINITE[c][column] === article);
+    if (cases.length === 0) return null;
+    return cases.length === 1 ? cases[0] : cases;
+}
+
 /** The noun's surface form for a case. Weak masculine nouns (n-Deklination)
  *  take -n/-en outside the nominative singular: "der Junge" → "den Jungen",
  *  "mit dem Franzosen". -n if the word already ends in -e, else -en. Today only

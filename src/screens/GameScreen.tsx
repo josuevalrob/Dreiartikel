@@ -1,6 +1,7 @@
 import { FilterDropdown } from '../components/FilterDropdown';
 import { Scoreboard } from '../components/Scoreboard';
 import { WordCard } from '../components/WordCard';
+import { StoryCard } from '../components/StoryCard';
 import { HintBar } from '../components/HintButton';
 import { PlaceBanner } from './PlaceBanner';
 import type { FilterType, GameMode, Round } from '../hooks/useGameState';
@@ -33,6 +34,8 @@ interface GameScreenProps {
     filterOpen: boolean;
     onToggleFilter: () => void;
     onSelectFilter: (filter: FilterType) => void;
+    // story mode
+    storyResults: ('correct' | 'missed')[];
     // actions
     onSelectOption: (option: string) => void;
     onReplay: () => void;
@@ -43,6 +46,7 @@ interface GameScreenProps {
 
 export function GameScreen(props: GameScreenProps) {
     const { round, isAwaitingNext } = props;
+    const isStory = props.mode === 'story';
 
     return (
         <main className="game-screen pixel">
@@ -54,13 +58,16 @@ export function GameScreen(props: GameScreenProps) {
                 <span className="game-header-spacer" aria-hidden="true">← Menu</span>
             </div>
 
-            <FilterDropdown
-                filter={props.filter}
-                categories={props.categories}
-                open={props.filterOpen}
-                onToggle={props.onToggleFilter}
-                onSelect={props.onSelectFilter}
-            />
+            {/* A story is a fixed text — no noun-pool filter. */}
+            {!isStory && (
+                <FilterDropdown
+                    filter={props.filter}
+                    categories={props.categories}
+                    open={props.filterOpen}
+                    onToggle={props.onToggleFilter}
+                    onSelect={props.onSelectFilter}
+                />
+            )}
 
             <Scoreboard
                 score={props.score}
@@ -80,19 +87,35 @@ export function GameScreen(props: GameScreenProps) {
                 </div>
             )}
 
-            <WordCard
-                round={round}
-                mode={props.mode}
-                isAwaitingNext={isAwaitingNext}
-                selectedOption={props.selectedOption}
-                showTipp={props.showTipp}
-                feedback={props.feedback}
-                tippText={props.tippText}
-                onSelectOption={props.onSelectOption}
-                onReplay={props.onReplay}
-                onKnowWhy={props.onKnowWhy}
-                onNext={props.onNext}
-            />
+            {isStory ? (
+                <StoryCard
+                    round={round}
+                    isAwaitingNext={isAwaitingNext}
+                    selectedOption={props.selectedOption}
+                    showTipp={props.showTipp}
+                    feedback={props.feedback}
+                    tippText={props.tippText}
+                    storyResults={props.storyResults}
+                    onSelectOption={props.onSelectOption}
+                    onReplay={props.onReplay}
+                    onKnowWhy={props.onKnowWhy}
+                    onNext={props.onNext}
+                />
+            ) : (
+                <WordCard
+                    round={round}
+                    mode={props.mode}
+                    isAwaitingNext={isAwaitingNext}
+                    selectedOption={props.selectedOption}
+                    showTipp={props.showTipp}
+                    feedback={props.feedback}
+                    tippText={props.tippText}
+                    onSelectOption={props.onSelectOption}
+                    onReplay={props.onReplay}
+                    onKnowWhy={props.onKnowWhy}
+                    onNext={props.onNext}
+                />
+            )}
 
             {!isAwaitingNext && props.availableHintKinds.length > 0 && (
                 <HintBar

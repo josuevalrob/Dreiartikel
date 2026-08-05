@@ -26,6 +26,8 @@ function item(partial: Partial<PracticeItem> & { word: string; gender: PracticeI
         pluralOnly: partial.pluralOnly,
         isWeakMasculine: partial.isWeakMasculine,
         isPlace: partial.isPlace,
+        level: partial.level ?? 1,
+        tags: partial.tags ?? [],
     };
 }
 

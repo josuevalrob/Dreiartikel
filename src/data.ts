@@ -1,8 +1,56 @@
-import { type Article, type Gender, articleForGender, genderForArticle } from './rules';
+import { type Article, type Gender, articleForGender } from './rules';
 import type { PluralPattern } from './plurals';
+import nounsData from './nouns.json';
+
+// ─── The noun dictionary is DATA, and the data lives in JSON ─────────────────
+//
+// Every fact about a word — its gender (the source of truth; the article is
+// DERIVED), English hint, thematic category, declension facts, and the new
+// enrichment fields (level, tags, cefr…) — lives in ONE row in `nouns.json`.
+// Adding or enriching vocabulary is editing that file: no code change, no TS
+// syntax to get wrong, and a non-dev can do it. This module only:
+//   1. gives the JSON its types (PracticeItem),
+//   2. validates it once at load so a bad row fails loudly, not silently,
+//   3. re-derives the legacy PERSON_WORDS/PLURAL_ONLY/WEAK_MASCULINE/PLACE_WORDS
+//      sets FROM the per-word fields (single source of truth = the JSON), so the
+//      modules that import those sets keep working unchanged,
+//   4. exposes generateItems()/getCategories()/shuffle, the stable API the rest
+//      of the app builds rounds from.
+//
+// Why JSON over a .ts const: the same reason the map flow and chapter prose are
+// data files — content you edit often should be plain data decoupled from code.
+// Before this, one noun's facts were scattered across six places (a string row +
+// five side-tables); now they're one object.
 
 export type Animacy = 'person' | 'thing';
 
+/** A noun row as it sits in nouns.json — every authored fact about the word. */
+interface RawNoun {
+    word: string;
+    gender: Gender;
+    hint: string;
+    category: string;
+    animacy: Animacy;
+    /** Plural surface form, or null when not yet curated. */
+    plural: string | null;
+    pluralPattern: PluralPattern | null;
+    pluralOnly: boolean;
+    weakMasculine: boolean;
+    place: boolean;
+    /** Difficulty gate: higher = surfaced in higher-level quests. */
+    level: number;
+    /** Topic/theme grouping for quests + the story generator. */
+    tags: string[];
+    /** Enrichment, filled over time (LLM story generator / authoring). */
+    cefr: string | null;
+    theme: string | null;
+    frequency: number | null;
+    exampleSentence: string | null;
+}
+
+/** The unit the game loop consumes. A superset of the raw row: `answer`/`options`
+ *  are DERIVED from gender, `id` is the row index. The optional declension flags
+ *  stay optional (absent when false) so existing consumers are unchanged. */
 export interface PracticeItem {
     id: string;
     word: string;
@@ -27,530 +75,117 @@ export interface PracticeItem {
      *  ("in den Park" / "im Park"). */
     isPlace?: boolean;
     /** The plural surface form, e.g. "Bücher". The SOURCE OF TRUTH for plural
-     *  mode (plurals aren't reliably rule-derivable). Set from the PLURALS map. */
+     *  mode (plurals aren't reliably rule-derivable). */
     plural?: string;
     /** How the plural is formed — the rule. Drives decoy generation and the
      *  Tipp in plural mode; `foreign` for irregular stems (Thema → Themen). */
     pluralPattern?: PluralPattern;
+    /** Difficulty gate (1 = easiest). Drives level-gated side quests. */
+    level: number;
+    /** Topic/theme tags for quest filtering + the story generator. */
+    tags: string[];
+    /** CEFR band (A1/A2/B1…), null until assigned. */
+    cefr?: string;
+    /** Semantic theme, null until assigned. */
+    theme?: string;
+    /** Usage-frequency rank, null until assigned. */
+    frequency?: number;
+    /** A canonical usage sentence (for the story generator), null until written. */
+    exampleSentence?: string;
 }
 
-// Curated plural data: the singular word → [plural form, pattern]. The plural
-// string is the source of truth (always correct); the pattern is the rule that
-// drives decoy generation + the Tipp. Plurals are NOT reliably rule-derivable
-// (rules are only tendencies), so each is hand-verified. Phase A is a curated
-// subset of common nouns spanning all eight patterns; grow it over time. Nouns
-// not listed here simply don't appear in plural mode yet. data.test.ts guards
-// that every key exists in the dataset and matches a sane shape.
-export const PLURALS: Record<string, [string, PluralPattern]> = {
-    // ── -e ───────────────────────────────────────────────────────────
-    'Brot': ['Brote', 'e'],
-    'Bein': ['Beine', 'e'],
-    'Tier': ['Tiere', 'e'],
-    'Spiel': ['Spiele', 'e'],
-    'Film': ['Filme', 'e'],
-    'Salat': ['Salate', 'e'],
-    'Schuh': ['Schuhe', 'e'],
-    'Hund': ['Hunde', 'e'],
+// ─── Load + validate the authored JSON ──────────────────────────────────────
 
-    // ── umlaut + -e ────────────────────────────────────────────────────
-    'Saft': ['Säfte', 'umlaut-e'],
-    'Fuß': ['Füße', 'umlaut-e'],
-    'Hut': ['Hüte', 'umlaut-e'],
-    'Hand': ['Hände', 'umlaut-e'],
-    'Wurst': ['Würste', 'umlaut-e'],
-    'Stadt': ['Städte', 'umlaut-e'],
-    'Anzug': ['Anzüge', 'umlaut-e'],
-
-    // ── -en / -n ───────────────────────────────────────────────────────
-    'Bluse': ['Blusen', 'en'],
-    'Tomate': ['Tomaten', 'en'],
-    'Banane': ['Bananen', 'en'],
-    'Katze': ['Katzen', 'en'],
-    'Tasse': ['Tassen', 'en'],
-    'Suppe': ['Suppen', 'en'],
-    'Karte': ['Karten', 'en'],
-    'Tür': ['Türen', 'en'],
-    'Maus': ['Mäuse', 'umlaut-e'],
-    'Freundin': ['Freundinnen', 'en'],
-    'Vegetarierin': ['Vegetarierinnen', 'en'],
-
-    // ── no change ──────────────────────────────────────────────────────
-    'Hamburger': ['Hamburger', 'none'],
-    'Löffel': ['Löffel', 'none'],
-    'Messer': ['Messer', 'none'],
-    'Becher': ['Becher', 'none'],
-    'Computer': ['Computer', 'none'],
-    'Fenster': ['Fenster', 'none'],
-    'Zimmer': ['Zimmer', 'none'],
-    'Kellner': ['Kellner', 'none'],
-    'Stiefel': ['Stiefel', 'none'],
-
-    // ── umlaut only ────────────────────────────────────────────────────
-    'Apfel': ['Äpfel', 'umlaut'],
-    'Vogel': ['Vögel', 'umlaut'],
-    'Mantel': ['Mäntel', 'umlaut'],
-    'Vater': ['Väter', 'umlaut'],
-    'Mutter': ['Mütter', 'umlaut'],
-    'Bruder': ['Brüder', 'umlaut'],
-    'Tochter': ['Töchter', 'umlaut'],
-
-    // ── -er ────────────────────────────────────────────────────────────
-    'Lied': ['Lieder', 'er'],
-    'Ei': ['Eier', 'er'],
-    'Kind': ['Kinder', 'er'],
-
-    // ── umlaut + -er ───────────────────────────────────────────────────
-    'Buch': ['Bücher', 'umlaut-er'],
-    'Mann': ['Männer', 'umlaut-er'],
-    'Glas': ['Gläser', 'umlaut-er'],
-
-    // ── -s ─────────────────────────────────────────────────────────────
-    'Kino': ['Kinos', 's'],
-    'Foto': ['Fotos', 's'],
-    'Disco': ['Discos', 's'],
-    'Hobby': ['Hobbys', 's'],
-    'Café': ['Cafés', 's'],
-    'Opa': ['Opas', 's'],
-    'Oma': ['Omas', 's'],
-    'Baby': ['Babys', 's'],
-    'Steak': ['Steaks', 's'],
-    'Cousin': ['Cousins', 's'],
-
-    // ── foreign / irregular stem ───────────────────────────────────────
-    'Pizza': ['Pizzen', 'foreign'],
-};
-
-// Animate nouns. Everything else defaults to 'thing'; a miss only narrows which
-// templates a noun can fill, never produces a wrong answer. data.test.ts guards
-// that every word listed here actually exists in rawData.
-export const PERSON_WORDS = new Set<string>([
-    // Family
-    'Baby', 'Bruder', 'Cousin', 'Kind', 'Erwachsener', 'Opa', 'Freund', 'Gast',
-    'Onkel', 'Schwester', 'Großmutter', 'Großvater', 'Junge', 'Mädchen', 'Mann',
-    'Mutter', 'Mutti', 'Oma', 'Tochter', 'Schwager', 'Schwägerin',
-    'Schwiegermutter', 'Schwiegervater', 'Sohn', 'Stiefvater', 'Stiefmutter',
-    'Tante', 'Vater', 'Papa', 'Vati', 'Zwilling',
-    // Countries & People
-    'Belgier', 'Engländer', 'Engländerin', 'Franzose', 'Französin', 'Holländer',
-    'Holländerin', 'Ire', 'Irin',
-    // Other
-    'Kellner', 'Vegetarier', 'Vegetarierin', 'Fan', 'Freundin',
-]);
-
-// Plural-only nouns — declension differs and is out of phase-1 scope.
-export const PLURAL_ONLY = new Set<string>([
-    'Eltern', 'Großeltern', 'Pommes', 'Niederlande', 'Handschuhe', 'Spaghetti',
-    'Meeresfrüchte', 'Nachrichten', 'Lebensmittel',
-]);
-
-// Weak masculine nouns (n-Deklination): add -n/-en outside the nominative
-// singular. In this dataset they all end in -e, so they take -n (Junge →
-// Jungen, Franzose → Franzosen, Name → Namen, Ire → Iren). data.test.ts guards
-// that each exists and is masculine.
-export const WEAK_MASCULINE = new Set<string>([
-    'Junge', 'Name', 'Vorname', 'Nachname', 'Franzose', 'Ire',
-]);
-
-// Places you can go to / be in — fill two-way-preposition frames ("in den
-// Park", "im Park"). data.test.ts guards that each exists in rawData.
-export const PLACE_WORDS = new Set<string>([
-    'Park', 'Kino', 'Stadion', 'Stadt', 'Schwimmbad', 'Theater', 'Hallenbad',
-    'Spielplatz', 'Badezimmer', 'Schlafzimmer', 'Wohnzimmer', 'Esszimmer',
-    'Gästezimmer', 'Kinderzimmer', 'Zimmer', 'Küche', 'Keller', 'Flur',
-    'Dachboden',
-]);
-
-// Format: "article#Word#hint"
-// Categories are assigned by index ranges below
-const rawData: [string, string][] = [
-    // Food & Drink (0-89)
-    ["die#Wurst#sausage", "Food & Drink"],
-    ["das#Würstchen#sausage", "Food & Drink"],
-    ["das#Brot#bread", "Food & Drink"],
-    ["die#Butter#butter", "Food & Drink"],
-    ["das#Brötchen#bread roll", "Food & Drink"],
-    ["das#Café#café", "Food & Drink"],
-    ["die#Currysoße#curry sauce", "Food & Drink"],
-    ["der#Durst#thirst", "Food & Drink"],
-    ["das#Ei#egg", "Food & Drink"],
-    ["das#Eis#ice", "Food & Drink"],
-    ["die#Erdbeere#strawberry", "Food & Drink"],
-    ["der#Essig#vinegar", "Food & Drink"],
-    ["der#Fisch#fish", "Food & Drink"],
-    ["die#Gabel#fork", "Food & Drink"],
-    ["das#Getränk#drink", "Food & Drink"],
-    ["das#Glas#glass", "Food & Drink"],
-    ["das#Hähnchen#chicken", "Food & Drink"],
-    ["der#Kellner#waiter", "Food & Drink"],
-    ["der#Hunger#hunger", "Food & Drink"],
-    ["der#Imbiss#snack", "Food & Drink"],
-    ["der#Kaffee#coffee", "Food & Drink"],
-    ["die#Traube#grape", "Food & Drink"],
-    ["die#Kartoffel#potato", "Food & Drink"],
-    ["die#Kasse#cash desk", "Food & Drink"],
-    ["die#Kirsche#cherry", "Food & Drink"],
-    ["der#Kuchen#cake", "Food & Drink"],
-    ["die#Limonade#lemonade", "Food & Drink"],
-    ["der#Löffel#spoon", "Food & Drink"],
-    ["das#Tagesgericht#set meal", "Food & Drink"],
-    ["das#Messer#knife", "Food & Drink"],
-    ["die#Milch#milk", "Food & Drink"],
-    ["das#Mineralwasser#mineral water", "Food & Drink"],
-    ["der#Nachtisch#dessert", "Food & Drink"],
-    ["der#Orangensaft#orange juice", "Food & Drink"],
-    ["der#Pfeffer#pepper", "Food & Drink"],
-    ["die#Pommes#fries", "Food & Drink"],
-    ["die#Portion#portion", "Food & Drink"],
-    ["die#Kostprobe#taste", "Food & Drink"],
-    ["der#Reis#rice", "Food & Drink"],
-    ["die#Rundreise#round trip", "Food & Drink"],
-    ["der#Saft#juice", "Food & Drink"],
-    ["die#Sahne#cream", "Food & Drink"],
-    ["der#Salat#salad", "Food & Drink"],
-    ["das#Salz#salt", "Food & Drink"],
-    ["die#Schokolade#chocolate", "Food & Drink"],
-    ["der#Senf#mustard", "Food & Drink"],
-    ["die#Serviette#serviette", "Food & Drink"],
-    ["das#Spiegelei#fried egg", "Food & Drink"],
-    ["das#Selterswasser#sparkling water", "Food & Drink"],
-    ["die#Suppe#soup", "Food & Drink"],
-    ["die#Tasse#cup", "Food & Drink"],
-    ["der#Becher#cup", "Food & Drink"],
-    ["der#Tee#tea", "Food & Drink"],
-    ["die#Platte#plate", "Food & Drink"],
-    ["die#Torte#cake", "Food & Drink"],
-    ["der#Wein#wine", "Food & Drink"],
-    ["der#Zucker#sugar", "Food & Drink"],
-    ["die#Ananas#pineapple", "Food & Drink"],
-    ["der#Apfel#apple", "Food & Drink"],
-    ["der#Appetit#appetite", "Food & Drink"],
-    ["die#Aprikose#apricot", "Food & Drink"],
-    ["die#Banane#banana", "Food & Drink"],
-    ["das#Steak#steak", "Food & Drink"],
-    ["das#Bier#beer", "Food & Drink"],
-    ["die#Birne#pear", "Food & Drink"],
-    ["der#Blumenkohl#cauliflower", "Food & Drink"],
-    ["die#Bohne#bean", "Food & Drink"],
-    ["der#Duft#scent", "Food & Drink"],
-    ["das#Fett#fat", "Food & Drink"],
-    ["die#Passform#fit", "Food & Drink"],
-    ["das#Gemüse#vegetable", "Food & Drink"],
-    ["der#Hamburger#hamburger", "Food & Drink"],
-    ["die#Hauptspeise#main dish", "Food & Drink"],
-    ["das#Kalbfleisch#veal", "Food & Drink"],
-    ["die#Mohrrübe#carrot", "Food & Drink"],
-    ["der#Käse#cheese", "Food & Drink"],
-    ["der#Kohl#cabbage", "Food & Drink"],
-    ["das#Lebensmittel#food", "Food & Drink"],
-    ["die#Meeresfrüchte#seafood", "Food & Drink"],
-    ["das#Öl#oil", "Food & Drink"],
-    ["das#Omelett#omelette", "Food & Drink"],
-    ["der#Pfirsich#peach", "Food & Drink"],
-    ["der#Champignon#mushroom", "Food & Drink"],
-    ["die#Pizza#pizza", "Food & Drink"],
-    ["das#Rezept#recipe", "Food & Drink"],
-    ["das#Rindfleisch#beef", "Food & Drink"],
-    ["die#Haut#skin", "Food & Drink"],
-    ["die#Schüssel#bowl", "Food & Drink"],
-    ["die#Schale#bowl", "Food & Drink"],
-    ["der#Schinken#ham", "Food & Drink"],
-    ["das#Schweinefleisch#pork", "Food & Drink"],
-    ["die#Spaghetti#spaghetti", "Food & Drink"],
-    ["die#Spezialität#specialty", "Food & Drink"],
-    ["die#Süßigkeit#sweet", "Food & Drink"],
-    ["die#Tomate#tomato", "Food & Drink"],
-    ["der#Vegetarier#vegetarian", "Food & Drink"],
-    ["die#Vegetarierin#vegetarian", "Food & Drink"],
-
-    // Calendar & Seasons
-    ["der#Januar#January", "Calendar"],
-    ["der#Februar#February", "Calendar"],
-    ["der#März#March", "Calendar"],
-    ["der#April#April", "Calendar"],
-    ["der#Mai#May", "Calendar"],
-    ["der#Juni#June", "Calendar"],
-    ["der#Juli#July", "Calendar"],
-    ["der#August#August", "Calendar"],
-    ["der#September#September", "Calendar"],
-    ["der#Oktober#October", "Calendar"],
-    ["der#November#November", "Calendar"],
-    ["der#Dezember#December", "Calendar"],
-    ["der#Frühling#Spring", "Calendar"],
-    ["der#Sommer#Summer", "Calendar"],
-    ["der#Herbst#Autumn", "Calendar"],
-    ["der#Winter#Winter", "Calendar"],
-    ["die#Fastenzeit#Lent", "Calendar"],
-    ["der#Feiertag#holiday", "Calendar"],
-    ["das#Jahr#year", "Calendar"],
-    ["die#Jahreszeit#season", "Calendar"],
-    ["der#Monat#month", "Calendar"],
-    ["das#Neujahr#New Year", "Calendar"],
-    ["das#Ostern#Easter", "Calendar"],
-    ["das#Weihnachten#Christmas", "Calendar"],
-
-    // Body
-    ["der#Rücken#back", "Body"],
-    ["das#Ohr#ear", "Body"],
-    ["die#Nase#nose", "Body"],
-    ["der#Mund#mouth", "Body"],
-    ["der#Körper#body", "Body"],
-    ["der#Kopf#head", "Body"],
-    ["das#Knie#knee", "Body"],
-    ["die#Hand#hand", "Body"],
-    ["die#Kehle#throat", "Body"],
-    ["der#Rachen#throat", "Body"],
-    ["der#Fuß#foot", "Body"],
-    ["der#Finger#finger", "Body"],
-    ["das#Fieber#fever", "Body"],
-    ["das#Bein#leg", "Body"],
-    ["der#Magen#stomach", "Body"],
-    ["der#Bauch#stomach", "Body"],
-    ["das#Auge#eye", "Body"],
-    ["der#Arm#arm", "Body"],
-
-    // Animals
-    ["der#Wellensittich#budgerigar", "Animals"],
-    ["der#Vogel#bird", "Animals"],
-    ["das#Tier#animal", "Animals"],
-    ["das#Pferd#horse", "Animals"],
-    ["das#Meerschweinchen#guinea pig", "Animals"],
-    ["die#Maus#mouse", "Animals"],
-    ["die#Katze#cat", "Animals"],
-    ["das#Kaninchen#rabbit", "Animals"],
-    ["der#Hund#dog", "Animals"],
-    ["der#Hamster#hamster", "Animals"],
-    ["das#Schaf#sheep", "Animals"],
-    ["die#Kuh#cow", "Animals"],
-
-    // Beverages
-    ["der#Apfelsaft#apple juice", "Beverages"],
-    ["der#Cappuccino#cappuccino", "Beverages"],
-    ["der#Champagner#champagne", "Beverages"],
-    ["der#Kakao#cocoa", "Beverages"],
-    ["der#Kirschsaft#cherry juice", "Beverages"],
-    ["der#Sekt#sparkling wine", "Beverages"],
-    ["der#Tomatensaft#tomato juice", "Beverages"],
-    ["der#Traubensaft#grape juice", "Beverages"],
-
-    // House & Rooms
-    ["das#Badezimmer#bathroom", "House"],
-    ["der#Dachboden#garret", "House"],
-    ["das#Esszimmer#dining room", "House"],
-    ["das#Fenster#window", "House"],
-    ["der#Flur#hall", "House"],
-    ["das#Gästezimmer#guest room", "House"],
-    ["der#Keller#cellar", "House"],
-    ["das#Kinderzimmer#child's room", "House"],
-    ["die#Küche#kitchen", "House"],
-    ["das#Schlafzimmer#bedroom", "House"],
-    ["die#Tür#door", "House"],
-    ["das#Wohnzimmer#living room", "House"],
-    ["das#Zimmer#room", "House"],
-
-    // Clothing
-    ["die#Kleidung#clothing, wear", "Clothing"],
-    ["der#Stoff#fabric, material", "Clothing"],
-    ["die#Mode#fashion", "Clothing"],
-    ["der#Hut#hat", "Clothing"],
-    ["die#Mütze#cap", "Clothing"],
-    ["das#Halstuch#scarf", "Clothing"],
-    ["das#Hemd#shirt", "Clothing"],
-    ["der#Pullover#sweater", "Clothing"],
-    ["die#Bluse#blouse", "Clothing"],
-    ["der#Gürtel#belt", "Clothing"],
-    ["die#Hose#(a pair of) trousers", "Clothing"],
-    ["der#Rock#skirt", "Clothing"],
-    ["der#Anzug#suit", "Clothing"],
-    ["die#Jacke#jacket", "Clothing"],
-    ["der#Mantel#coat", "Clothing"],
-    ["die#Strickjacke#cardigan", "Clothing"],
-    ["der#Handschuh#glove", "Clothing"],
-    ["die#Handschuhe#gloves", "Clothing"],
-    ["die#Krawatte#tie", "Clothing"],
-    ["der#Strumpf#stocking", "Clothing"],
-    ["der#Schuh#shoe", "Clothing"],
-    ["der#Stiefel#(high) boot", "Clothing"],
-
-    // Family
-    ["die#Familie#family", "Family"],
-    ["das#Baby#baby", "Family"],
-    ["der#Bruder#brother", "Family"],
-    ["der#Cousin#cousin", "Family"],
-    ["das#Kind#child", "Family"],
-    ["die#Eltern#parents", "Family"],
-    ["der#Erwachsener#adult", "Family"],
-    ["der#Opa#grandpa/granddad", "Family"],
-    ["der#Nachname#surname", "Family"],
-    ["der#Freund#friend", "Family"],
-    ["die#Freundschaft#friendship", "Family"],
-    ["der#Gast#guest", "Family"],
-    ["die#Gastfreundschaft#hospitality", "Family"],
-    ["die#Geburt#birth", "Family"],
-    ["der#Geburtstag#birthday", "Family"],
-    ["der#Onkel#uncle", "Family"],
-    ["die#Bruderschaft#brotherhood", "Family"],
-    ["die#Schwester#sister", "Family"],
-    ["die#Großeltern#grandparents", "Family"],
-    ["die#Großmutter#grandmother", "Family"],
-    ["der#Großvater#grandfather", "Family"],
-    ["die#Hausnummer#house number", "Family"],
-    ["der#Junge#boy", "Family"],
-    ["das#Mädchen#girl", "Family"],
-    ["der#Mann#man", "Family"],
-    ["die#Mutter#mother", "Family"],
-    ["die#Mutti#mum", "Family"],
-    ["der#Name#name", "Family"],
-    ["die#Oma#granny", "Family"],
-    ["die#Tochter#daughter", "Family"],
-    ["der#Schwager#brother-in-law", "Family"],
-    ["die#Schwägerin#sister-in-law", "Family"],
-    ["die#Schwiegermutter#mother-in-law", "Family"],
-    ["der#Schwiegervater#father-in-law", "Family"],
-    ["der#Sohn#son", "Family"],
-    ["der#Stiefvater#stepfather", "Family"],
-    ["die#Stiefmutter#stepmother", "Family"],
-    ["die#Tante#aunt", "Family"],
-    ["der#Wohnort#place of residence", "Family"],
-    ["der#Vater#father", "Family"],
-    ["der#Papa#dad", "Family"],
-    ["der#Vati#dad", "Family"],
-    ["der#Vorname#first name", "Family"],
-    ["der#Zwilling#twin", "Family"],
-
-    // Hobbies & Sports
-    ["der#Federball#badminton", "Hobbies"],
-    ["das#Badminton#badminton", "Hobbies"],
-    ["der#Basketball#basketball", "Hobbies"],
-    ["der#Besuch#visit", "Hobbies"],
-    ["die#Briefmarke#stamp", "Hobbies"],
-    ["das#Buch#book", "Hobbies"],
-    ["der#CD-Spieler#CD player", "Hobbies"],
-    ["der#Computer#computer", "Hobbies"],
-    ["die#Disco#disco", "Hobbies"],
-    ["das#Finale#final", "Hobbies"],
-    ["der#Fan#fan", "Hobbies"],
-    ["die#Fitness#fitness", "Hobbies"],
-    ["das#Foto#photo", "Hobbies"],
-    ["der#Fotoapparat#camera", "Hobbies"],
-    ["die#Freundin#girlfriend", "Hobbies"],
-    ["der#Fußball#football", "Hobbies"],
-    ["die#Gruppe#group", "Hobbies"],
-    ["die#Bewegung#movement", "Hobbies"],
-    ["das#Hallenbad#indoor swimming pool", "Hobbies"],
-    ["das#Hobby#hobby", "Hobbies"],
-    ["das#Hockey#hockey", "Hobbies"],
-    ["das#Instrument#instrument", "Hobbies"],
-    ["das#Werkzeug#tool", "Hobbies"],
-    ["der#Jugendklub#youth club", "Hobbies"],
-    ["die#Karte#card", "Hobbies"],
-    ["die#Kassette#cassette", "Hobbies"],
-    ["das#Kino#cinema", "Hobbies"],
-    ["das#Klavier#piano", "Hobbies"],
-    ["die#Mannschaft#team", "Hobbies"],
-    ["das#Mitglied#member", "Hobbies"],
-    ["die#Musik#music", "Hobbies"],
-    ["der#Park#park", "Hobbies"],
-    ["der#Rollschuh#roller skate", "Hobbies"],
-    ["das#Rugby#rugby", "Hobbies"],
-    ["das#Schwimmbad#swimming pool", "Hobbies"],
-    ["das#Spiel#game", "Hobbies"],
-    ["der#Spielplatz#playground", "Hobbies"],
-    ["der#Sport#sport", "Hobbies"],
-    ["das#Stadion#stadium", "Hobbies"],
-    ["die#Stadt#town", "Hobbies"],
-    ["das#Tennis#tennis", "Hobbies"],
-    ["das#Theater#theatre", "Hobbies"],
-    ["das#Tischtennis#table tennis", "Hobbies"],
-    ["der#Verein#club", "Hobbies"],
-    ["das#Videospiel#video game", "Hobbies"],
-    ["der#Wettbewerb#competition", "Hobbies"],
-    ["das#Wochenende#weekend", "Hobbies"],
-    ["die#Zeitschrift#magazine", "Hobbies"],
-
-    // Entertainment
-    ["das#Abenteuer#adventure", "Entertainment"],
-    ["die#Anzeige#advertisement", "Entertainment"],
-    ["der#Ausflug#trip", "Entertainment"],
-    ["der#Ausweis#identity card", "Entertainment"],
-    ["der#Dokumentarfilm#documentary", "Entertainment"],
-    ["der#Eingang#entrance", "Entertainment"],
-    ["der#Auftritt#entrance", "Entertainment"],
-    ["das#Eintrittsgeld#entrance fee", "Entertainment"],
-    ["der#Film#film", "Entertainment"],
-    ["die#Freizeit#leisure", "Entertainment"],
-    ["die#Vernunft#reason", "Entertainment"],
-    ["der#Horrorfilm#horror movie", "Entertainment"],
-    ["die#Auskunft#information desk", "Entertainment"],
-    ["der#Informationsschalter#information desk", "Entertainment"],
-    ["die#Komödie#comedy", "Entertainment"],
-    ["das#Konzert#concert", "Entertainment"],
-    ["der#Krimi#crime film", "Entertainment"],
-    ["die#Liebesgeschichte#romance", "Entertainment"],
-    ["das#Lied#song", "Entertainment"],
-    ["die#Liste#list", "Entertainment"],
-    ["die#Nachrichten#news", "Entertainment"],
-    ["die#Nachricht#news", "Entertainment"],
-    ["der#Pop#pop", "Entertainment"],
-
-    // Countries & People
-    ["der#Belgier#Belgian", "Countries"],
-    ["der#Engländer#English man", "Countries"],
-    ["die#Engländerin#English woman", "Countries"],
-    ["der#Franzose#French man", "Countries"],
-    ["die#Französin#French woman", "Countries"],
-    ["der#Holländer#Dutch man", "Countries"],
-    ["die#Holländerin#Dutch woman", "Countries"],
-    ["der#Ire#Irish man", "Countries"],
-    ["die#Irin#Irish woman", "Countries"],
-    ["das#Belgien#Belgium", "Countries"],
-    ["das#England#England", "Countries"],
-    ["das#Frankreich#France", "Countries"],
-    ["das#Griechenland#Greece", "Countries"],
-    ["die#Niederlande#the Netherlands", "Countries"],
-    ["das#Österreich#Austria", "Countries"],
-    ["das#Portugal#Portugal", "Countries"],
-    ["das#Schottland#Scotland", "Countries"],
-    ["die#Schweiz#Switzerland", "Countries"],
-    ["das#Spanien#Spain", "Countries"],
-    ["die#Türkei#Turkey", "Countries"],
-    ["der#Artikel#article", "Countries"],
-];
+const RAW_NOUNS = (nounsData as unknown as { nouns: RawNoun[] }).nouns;
 
 const VALID_ARTICLES: readonly Article[] = ['der', 'die', 'das'];
+const VALID_GENDERS: readonly Gender[] = ['m', 'f', 'n'];
 
-function isArticle(value: string): value is Article {
-    return (VALID_ARTICLES as readonly string[]).includes(value);
-}
-
-export function generateItems(): PracticeItem[] {
-    return rawData.map(([itemStr, category], index) => {
-        const [article, word, hint] = itemStr.split('#').map(s => s.trim());
-        if (!isArticle(article)) {
-            throw new Error(`Invalid article "${article}" for word "${word}" (entry ${index})`);
+function validate(rows: RawNoun[]): void {
+    const seen = new Set<string>();
+    rows.forEach((n, i) => {
+        if (!n.word) throw new Error(`nouns.json: row ${i} has no word`);
+        if (seen.has(n.word)) throw new Error(`nouns.json: duplicate word "${n.word}"`);
+        seen.add(n.word);
+        if (!VALID_GENDERS.includes(n.gender)) {
+            throw new Error(`nouns.json: word "${n.word}" has invalid gender "${n.gender}"`);
         }
-        const gender = genderForArticle(article);
-        const pluralEntry = PLURALS[word];
-        return {
-            id: String(index),
-            word,
-            gender,
-            answer: articleForGender(gender),
-            hint,
-            options: [...VALID_ARTICLES],
-            category,
-            animacy: PERSON_WORDS.has(word) ? 'person' : 'thing',
-            pluralOnly: PLURAL_ONLY.has(word) || undefined,
-            isWeakMasculine: WEAK_MASCULINE.has(word) || undefined,
-            isPlace: PLACE_WORDS.has(word) || undefined,
-            plural: pluralEntry?.[0],
-            pluralPattern: pluralEntry?.[1],
-        };
+        if (typeof n.level !== 'number' || n.level < 1) {
+            throw new Error(`nouns.json: word "${n.word}" must have level >= 1`);
+        }
+        if (!Array.isArray(n.tags)) {
+            throw new Error(`nouns.json: word "${n.word}" tags must be an array`);
+        }
     });
 }
 
-/** Get all unique thematic categories */
+validate(RAW_NOUNS);
+
+// ─── Legacy sets, re-derived FROM the JSON ───────────────────────────────────
+// The per-word fields are the single source of truth. These sets are a derived
+// VIEW kept for the modules that still import them (sentences.ts, tests). No
+// drift is possible — change a word's field, the set follows.
+
+/** Animate nouns. Everything else is 'thing'; a miss only narrows which
+ *  templates a noun can fill, never produces a wrong answer. */
+export const PERSON_WORDS: Set<string> = new Set(
+    RAW_NOUNS.filter(n => n.animacy === 'person').map(n => n.word),
+);
+
+/** Plural-only nouns — declension differs and is out of phase-1 scope. */
+export const PLURAL_ONLY: Set<string> = new Set(
+    RAW_NOUNS.filter(n => n.pluralOnly).map(n => n.word),
+);
+
+/** Weak masculine nouns (n-Deklination): add -n/-en outside the nominative
+ *  singular (Junge → Jungen, Franzose → Franzosen). */
+export const WEAK_MASCULINE: Set<string> = new Set(
+    RAW_NOUNS.filter(n => n.weakMasculine).map(n => n.word),
+);
+
+/** Places you can go to / be in — fill two-way-preposition frames. */
+export const PLACE_WORDS: Set<string> = new Set(
+    RAW_NOUNS.filter(n => n.place).map(n => n.word),
+);
+
+/** The singular word → [plural form, pattern]. The plural string is the source
+ *  of truth; the pattern drives decoy generation + the Tipp. Re-derived from the
+ *  rows that carry plural data. */
+export const PLURALS: Record<string, [string, PluralPattern]> = Object.fromEntries(
+    RAW_NOUNS.filter((n): n is RawNoun & { plural: string; pluralPattern: PluralPattern } =>
+        n.plural !== null && n.pluralPattern !== null,
+    ).map(n => [n.word, [n.plural, n.pluralPattern]]),
+);
+
+// ─── Public API (unchanged signatures) ───────────────────────────────────────
+
+export function generateItems(): PracticeItem[] {
+    return RAW_NOUNS.map((n, index) => ({
+        id: String(index),
+        word: n.word,
+        gender: n.gender,
+        answer: articleForGender(n.gender),
+        hint: n.hint,
+        options: [...VALID_ARTICLES],
+        category: n.category,
+        animacy: n.animacy,
+        pluralOnly: n.pluralOnly || undefined,
+        isWeakMasculine: n.weakMasculine || undefined,
+        isPlace: n.place || undefined,
+        plural: n.plural ?? undefined,
+        pluralPattern: n.pluralPattern ?? undefined,
+        level: n.level,
+        tags: n.tags,
+        cefr: n.cefr ?? undefined,
+        theme: n.theme ?? undefined,
+        frequency: n.frequency ?? undefined,
+        exampleSentence: n.exampleSentence ?? undefined,
+    }));
+}
+
+/** All unique thematic categories, in first-seen order. */
 export function getCategories(): string[] {
-    const cats = new Set(rawData.map(([, cat]) => cat));
+    const cats = new Set(RAW_NOUNS.map(n => n.category));
     return Array.from(cats);
 }
 

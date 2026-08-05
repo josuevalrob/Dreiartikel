@@ -1,5 +1,16 @@
 let bestVoice: SpeechSynthesisVoice | null = null;
 
+// Global audio gate. The Settings menu flips this; every playWord call is gated
+// by it, so muting is one switch rather than a prop threaded through the hook.
+let audioEnabled = true;
+
+/** Enable/disable spoken audio app-wide. When disabling, any in-progress speech
+ *  is cut immediately so toggling off is instant. */
+export function setAudioEnabled(enabled: boolean) {
+    audioEnabled = enabled;
+    if (!enabled) stopSpeech();
+}
+
 function loadVoices() {
     const voices = window.speechSynthesis.getVoices();
     // Prioritize high-quality German voices (like Google Deutsch or native iOS German)
@@ -20,6 +31,7 @@ if (window.speechSynthesis) {
 }
 
 export function playWord(word: string) {
+    if (!audioEnabled) return;
     if (!window.speechSynthesis) return;
 
     // Always retry finding a German voice if we don't have one yet

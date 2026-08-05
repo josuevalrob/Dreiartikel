@@ -12,6 +12,8 @@ function item(partial: Partial<PracticeItem> & { word: string }): PracticeItem {
         options: partial.options ?? ['der', 'die', 'das'],
         category: 'Test',
         animacy: partial.animacy ?? 'thing',
+        level: partial.level ?? 1,
+        tags: partial.tags ?? [],
     };
 }
 

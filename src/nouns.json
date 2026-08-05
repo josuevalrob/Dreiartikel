@@ -1,0 +1,6605 @@
+{
+  "_comment": "The noun dictionary as DATA. One row per word, every fact in one place — gender (source of truth; article is derived), the English hint, thematic category, declension facts (animacy/plural/pluralPattern/pluralOnly/weakMasculine/place), plus enrichment for quests + the story generator: level (difficulty gate), tags (topic grouping), and cefr/theme/frequency/exampleSentence (filled over time). Edit this file to add or enrich vocabulary — no code change. data.ts loads + validates it and re-derives the legacy PERSON_WORDS/PLURAL_ONLY/WEAK_MASCULINE/PLACE_WORDS sets from these fields.",
+  "nouns": [
+    {
+      "word": "Wurst",
+      "gender": "f",
+      "hint": "sausage",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Würste",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Würstchen",
+      "gender": "n",
+      "hint": "sausage",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Brot",
+      "gender": "n",
+      "hint": "bread",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Brote",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Butter",
+      "gender": "f",
+      "hint": "butter",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Brötchen",
+      "gender": "n",
+      "hint": "bread roll",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Café",
+      "gender": "n",
+      "hint": "café",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Cafés",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Currysoße",
+      "gender": "f",
+      "hint": "curry sauce",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Durst",
+      "gender": "m",
+      "hint": "thirst",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Ei",
+      "gender": "n",
+      "hint": "egg",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Eier",
+      "pluralPattern": "er",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Eis",
+      "gender": "n",
+      "hint": "ice",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Erdbeere",
+      "gender": "f",
+      "hint": "strawberry",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Essig",
+      "gender": "m",
+      "hint": "vinegar",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fisch",
+      "gender": "m",
+      "hint": "fish",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Gabel",
+      "gender": "f",
+      "hint": "fork",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Getränk",
+      "gender": "n",
+      "hint": "drink",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Glas",
+      "gender": "n",
+      "hint": "glass",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Gläser",
+      "pluralPattern": "umlaut-er",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hähnchen",
+      "gender": "n",
+      "hint": "chicken",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kellner",
+      "gender": "m",
+      "hint": "waiter",
+      "category": "Food & Drink",
+      "animacy": "person",
+      "plural": "Kellner",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hunger",
+      "gender": "m",
+      "hint": "hunger",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Imbiss",
+      "gender": "m",
+      "hint": "snack",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kaffee",
+      "gender": "m",
+      "hint": "coffee",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Traube",
+      "gender": "f",
+      "hint": "grape",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kartoffel",
+      "gender": "f",
+      "hint": "potato",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kasse",
+      "gender": "f",
+      "hint": "cash desk",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kirsche",
+      "gender": "f",
+      "hint": "cherry",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kuchen",
+      "gender": "m",
+      "hint": "cake",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Limonade",
+      "gender": "f",
+      "hint": "lemonade",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Löffel",
+      "gender": "m",
+      "hint": "spoon",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Löffel",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tagesgericht",
+      "gender": "n",
+      "hint": "set meal",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Messer",
+      "gender": "n",
+      "hint": "knife",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Messer",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Milch",
+      "gender": "f",
+      "hint": "milk",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mineralwasser",
+      "gender": "n",
+      "hint": "mineral water",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Nachtisch",
+      "gender": "m",
+      "hint": "dessert",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Orangensaft",
+      "gender": "m",
+      "hint": "orange juice",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Pfeffer",
+      "gender": "m",
+      "hint": "pepper",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Pommes",
+      "gender": "f",
+      "hint": "fries",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Portion",
+      "gender": "f",
+      "hint": "portion",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kostprobe",
+      "gender": "f",
+      "hint": "taste",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Reis",
+      "gender": "m",
+      "hint": "rice",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rundreise",
+      "gender": "f",
+      "hint": "round trip",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Saft",
+      "gender": "m",
+      "hint": "juice",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Säfte",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Sahne",
+      "gender": "f",
+      "hint": "cream",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Salat",
+      "gender": "m",
+      "hint": "salad",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Salate",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Salz",
+      "gender": "n",
+      "hint": "salt",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schokolade",
+      "gender": "f",
+      "hint": "chocolate",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Senf",
+      "gender": "m",
+      "hint": "mustard",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Serviette",
+      "gender": "f",
+      "hint": "serviette",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Spiegelei",
+      "gender": "n",
+      "hint": "fried egg",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Selterswasser",
+      "gender": "n",
+      "hint": "sparkling water",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Suppe",
+      "gender": "f",
+      "hint": "soup",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Suppen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tasse",
+      "gender": "f",
+      "hint": "cup",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Tassen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Becher",
+      "gender": "m",
+      "hint": "cup",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Becher",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tee",
+      "gender": "m",
+      "hint": "tea",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Platte",
+      "gender": "f",
+      "hint": "plate",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Torte",
+      "gender": "f",
+      "hint": "cake",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Wein",
+      "gender": "m",
+      "hint": "wine",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Zucker",
+      "gender": "m",
+      "hint": "sugar",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Ananas",
+      "gender": "f",
+      "hint": "pineapple",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Apfel",
+      "gender": "m",
+      "hint": "apple",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Äpfel",
+      "pluralPattern": "umlaut",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Appetit",
+      "gender": "m",
+      "hint": "appetite",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Aprikose",
+      "gender": "f",
+      "hint": "apricot",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Banane",
+      "gender": "f",
+      "hint": "banana",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Bananen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Steak",
+      "gender": "n",
+      "hint": "steak",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Steaks",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bier",
+      "gender": "n",
+      "hint": "beer",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Birne",
+      "gender": "f",
+      "hint": "pear",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Blumenkohl",
+      "gender": "m",
+      "hint": "cauliflower",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bohne",
+      "gender": "f",
+      "hint": "bean",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Duft",
+      "gender": "m",
+      "hint": "scent",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fett",
+      "gender": "n",
+      "hint": "fat",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Passform",
+      "gender": "f",
+      "hint": "fit",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Gemüse",
+      "gender": "n",
+      "hint": "vegetable",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hamburger",
+      "gender": "m",
+      "hint": "hamburger",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Hamburger",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hauptspeise",
+      "gender": "f",
+      "hint": "main dish",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kalbfleisch",
+      "gender": "n",
+      "hint": "veal",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mohrrübe",
+      "gender": "f",
+      "hint": "carrot",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Käse",
+      "gender": "m",
+      "hint": "cheese",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kohl",
+      "gender": "m",
+      "hint": "cabbage",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Lebensmittel",
+      "gender": "n",
+      "hint": "food",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Meeresfrüchte",
+      "gender": "f",
+      "hint": "seafood",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Öl",
+      "gender": "n",
+      "hint": "oil",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Omelett",
+      "gender": "n",
+      "hint": "omelette",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Pfirsich",
+      "gender": "m",
+      "hint": "peach",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Champignon",
+      "gender": "m",
+      "hint": "mushroom",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Pizza",
+      "gender": "f",
+      "hint": "pizza",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Pizzen",
+      "pluralPattern": "foreign",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rezept",
+      "gender": "n",
+      "hint": "recipe",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rindfleisch",
+      "gender": "n",
+      "hint": "beef",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Haut",
+      "gender": "f",
+      "hint": "skin",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schüssel",
+      "gender": "f",
+      "hint": "bowl",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schale",
+      "gender": "f",
+      "hint": "bowl",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schinken",
+      "gender": "m",
+      "hint": "ham",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schweinefleisch",
+      "gender": "n",
+      "hint": "pork",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Spaghetti",
+      "gender": "f",
+      "hint": "spaghetti",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Spezialität",
+      "gender": "f",
+      "hint": "specialty",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Süßigkeit",
+      "gender": "f",
+      "hint": "sweet",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tomate",
+      "gender": "f",
+      "hint": "tomato",
+      "category": "Food & Drink",
+      "animacy": "thing",
+      "plural": "Tomaten",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Vegetarier",
+      "gender": "m",
+      "hint": "vegetarian",
+      "category": "Food & Drink",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Vegetarierin",
+      "gender": "f",
+      "hint": "vegetarian",
+      "category": "Food & Drink",
+      "animacy": "person",
+      "plural": "Vegetarierinnen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "food-and-drink"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Januar",
+      "gender": "m",
+      "hint": "January",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Februar",
+      "gender": "m",
+      "hint": "February",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "März",
+      "gender": "m",
+      "hint": "March",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "April",
+      "gender": "m",
+      "hint": "April",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mai",
+      "gender": "m",
+      "hint": "May",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Juni",
+      "gender": "m",
+      "hint": "June",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Juli",
+      "gender": "m",
+      "hint": "July",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "August",
+      "gender": "m",
+      "hint": "August",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "September",
+      "gender": "m",
+      "hint": "September",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Oktober",
+      "gender": "m",
+      "hint": "October",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "November",
+      "gender": "m",
+      "hint": "November",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Dezember",
+      "gender": "m",
+      "hint": "December",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Frühling",
+      "gender": "m",
+      "hint": "Spring",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Sommer",
+      "gender": "m",
+      "hint": "Summer",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Herbst",
+      "gender": "m",
+      "hint": "Autumn",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Winter",
+      "gender": "m",
+      "hint": "Winter",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fastenzeit",
+      "gender": "f",
+      "hint": "Lent",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Feiertag",
+      "gender": "m",
+      "hint": "holiday",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Jahr",
+      "gender": "n",
+      "hint": "year",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Jahreszeit",
+      "gender": "f",
+      "hint": "season",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Monat",
+      "gender": "m",
+      "hint": "month",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Neujahr",
+      "gender": "n",
+      "hint": "New Year",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Ostern",
+      "gender": "n",
+      "hint": "Easter",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Weihnachten",
+      "gender": "n",
+      "hint": "Christmas",
+      "category": "Calendar",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "calendar"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rücken",
+      "gender": "m",
+      "hint": "back",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Ohr",
+      "gender": "n",
+      "hint": "ear",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Nase",
+      "gender": "f",
+      "hint": "nose",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mund",
+      "gender": "m",
+      "hint": "mouth",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Körper",
+      "gender": "m",
+      "hint": "body",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kopf",
+      "gender": "m",
+      "hint": "head",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Knie",
+      "gender": "n",
+      "hint": "knee",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hand",
+      "gender": "f",
+      "hint": "hand",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": "Hände",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kehle",
+      "gender": "f",
+      "hint": "throat",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rachen",
+      "gender": "m",
+      "hint": "throat",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fuß",
+      "gender": "m",
+      "hint": "foot",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": "Füße",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Finger",
+      "gender": "m",
+      "hint": "finger",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fieber",
+      "gender": "n",
+      "hint": "fever",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bein",
+      "gender": "n",
+      "hint": "leg",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": "Beine",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Magen",
+      "gender": "m",
+      "hint": "stomach",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bauch",
+      "gender": "m",
+      "hint": "stomach",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Auge",
+      "gender": "n",
+      "hint": "eye",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Arm",
+      "gender": "m",
+      "hint": "arm",
+      "category": "Body",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "body"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Wellensittich",
+      "gender": "m",
+      "hint": "budgerigar",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Vogel",
+      "gender": "m",
+      "hint": "bird",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": "Vögel",
+      "pluralPattern": "umlaut",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tier",
+      "gender": "n",
+      "hint": "animal",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": "Tiere",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Pferd",
+      "gender": "n",
+      "hint": "horse",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Meerschweinchen",
+      "gender": "n",
+      "hint": "guinea pig",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Maus",
+      "gender": "f",
+      "hint": "mouse",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": "Mäuse",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Katze",
+      "gender": "f",
+      "hint": "cat",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": "Katzen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kaninchen",
+      "gender": "n",
+      "hint": "rabbit",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hund",
+      "gender": "m",
+      "hint": "dog",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": "Hunde",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hamster",
+      "gender": "m",
+      "hint": "hamster",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schaf",
+      "gender": "n",
+      "hint": "sheep",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kuh",
+      "gender": "f",
+      "hint": "cow",
+      "category": "Animals",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "animals"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Apfelsaft",
+      "gender": "m",
+      "hint": "apple juice",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Cappuccino",
+      "gender": "m",
+      "hint": "cappuccino",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Champagner",
+      "gender": "m",
+      "hint": "champagne",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kakao",
+      "gender": "m",
+      "hint": "cocoa",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kirschsaft",
+      "gender": "m",
+      "hint": "cherry juice",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Sekt",
+      "gender": "m",
+      "hint": "sparkling wine",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tomatensaft",
+      "gender": "m",
+      "hint": "tomato juice",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Traubensaft",
+      "gender": "m",
+      "hint": "grape juice",
+      "category": "Beverages",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "beverages"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Badezimmer",
+      "gender": "n",
+      "hint": "bathroom",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Dachboden",
+      "gender": "m",
+      "hint": "garret",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Esszimmer",
+      "gender": "n",
+      "hint": "dining room",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fenster",
+      "gender": "n",
+      "hint": "window",
+      "category": "House",
+      "animacy": "thing",
+      "plural": "Fenster",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Flur",
+      "gender": "m",
+      "hint": "hall",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Gästezimmer",
+      "gender": "n",
+      "hint": "guest room",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Keller",
+      "gender": "m",
+      "hint": "cellar",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kinderzimmer",
+      "gender": "n",
+      "hint": "child's room",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Küche",
+      "gender": "f",
+      "hint": "kitchen",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schlafzimmer",
+      "gender": "n",
+      "hint": "bedroom",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tür",
+      "gender": "f",
+      "hint": "door",
+      "category": "House",
+      "animacy": "thing",
+      "plural": "Türen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Wohnzimmer",
+      "gender": "n",
+      "hint": "living room",
+      "category": "House",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Zimmer",
+      "gender": "n",
+      "hint": "room",
+      "category": "House",
+      "animacy": "thing",
+      "plural": "Zimmer",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "house"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kleidung",
+      "gender": "f",
+      "hint": "clothing, wear",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Stoff",
+      "gender": "m",
+      "hint": "fabric, material",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mode",
+      "gender": "f",
+      "hint": "fashion",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hut",
+      "gender": "m",
+      "hint": "hat",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": "Hüte",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mütze",
+      "gender": "f",
+      "hint": "cap",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Halstuch",
+      "gender": "n",
+      "hint": "scarf",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hemd",
+      "gender": "n",
+      "hint": "shirt",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Pullover",
+      "gender": "m",
+      "hint": "sweater",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bluse",
+      "gender": "f",
+      "hint": "blouse",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": "Blusen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Gürtel",
+      "gender": "m",
+      "hint": "belt",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hose",
+      "gender": "f",
+      "hint": "(a pair of) trousers",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rock",
+      "gender": "m",
+      "hint": "skirt",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Anzug",
+      "gender": "m",
+      "hint": "suit",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": "Anzüge",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Jacke",
+      "gender": "f",
+      "hint": "jacket",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mantel",
+      "gender": "m",
+      "hint": "coat",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": "Mäntel",
+      "pluralPattern": "umlaut",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Strickjacke",
+      "gender": "f",
+      "hint": "cardigan",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Handschuh",
+      "gender": "m",
+      "hint": "glove",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Handschuhe",
+      "gender": "f",
+      "hint": "gloves",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Krawatte",
+      "gender": "f",
+      "hint": "tie",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Strumpf",
+      "gender": "m",
+      "hint": "stocking",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schuh",
+      "gender": "m",
+      "hint": "shoe",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": "Schuhe",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Stiefel",
+      "gender": "m",
+      "hint": "(high) boot",
+      "category": "Clothing",
+      "animacy": "thing",
+      "plural": "Stiefel",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "clothing"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Familie",
+      "gender": "f",
+      "hint": "family",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Baby",
+      "gender": "n",
+      "hint": "baby",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Babys",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bruder",
+      "gender": "m",
+      "hint": "brother",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Brüder",
+      "pluralPattern": "umlaut",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Cousin",
+      "gender": "m",
+      "hint": "cousin",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Cousins",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kind",
+      "gender": "n",
+      "hint": "child",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Kinder",
+      "pluralPattern": "er",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Eltern",
+      "gender": "f",
+      "hint": "parents",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Erwachsener",
+      "gender": "m",
+      "hint": "adult",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Opa",
+      "gender": "m",
+      "hint": "grandpa/granddad",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Opas",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Nachname",
+      "gender": "m",
+      "hint": "surname",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": true,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Freund",
+      "gender": "m",
+      "hint": "friend",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Freundschaft",
+      "gender": "f",
+      "hint": "friendship",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Gast",
+      "gender": "m",
+      "hint": "guest",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Gastfreundschaft",
+      "gender": "f",
+      "hint": "hospitality",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Geburt",
+      "gender": "f",
+      "hint": "birth",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Geburtstag",
+      "gender": "m",
+      "hint": "birthday",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Onkel",
+      "gender": "m",
+      "hint": "uncle",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bruderschaft",
+      "gender": "f",
+      "hint": "brotherhood",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schwester",
+      "gender": "f",
+      "hint": "sister",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Großeltern",
+      "gender": "f",
+      "hint": "grandparents",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Großmutter",
+      "gender": "f",
+      "hint": "grandmother",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Großvater",
+      "gender": "m",
+      "hint": "grandfather",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hausnummer",
+      "gender": "f",
+      "hint": "house number",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Junge",
+      "gender": "m",
+      "hint": "boy",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": true,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mädchen",
+      "gender": "n",
+      "hint": "girl",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mann",
+      "gender": "m",
+      "hint": "man",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Männer",
+      "pluralPattern": "umlaut-er",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mutter",
+      "gender": "f",
+      "hint": "mother",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Mütter",
+      "pluralPattern": "umlaut",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mutti",
+      "gender": "f",
+      "hint": "mum",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Name",
+      "gender": "m",
+      "hint": "name",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": true,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Oma",
+      "gender": "f",
+      "hint": "granny",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Omas",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tochter",
+      "gender": "f",
+      "hint": "daughter",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Töchter",
+      "pluralPattern": "umlaut",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schwager",
+      "gender": "m",
+      "hint": "brother-in-law",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schwägerin",
+      "gender": "f",
+      "hint": "sister-in-law",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schwiegermutter",
+      "gender": "f",
+      "hint": "mother-in-law",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schwiegervater",
+      "gender": "m",
+      "hint": "father-in-law",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Sohn",
+      "gender": "m",
+      "hint": "son",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Stiefvater",
+      "gender": "m",
+      "hint": "stepfather",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Stiefmutter",
+      "gender": "f",
+      "hint": "stepmother",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tante",
+      "gender": "f",
+      "hint": "aunt",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Wohnort",
+      "gender": "m",
+      "hint": "place of residence",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Vater",
+      "gender": "m",
+      "hint": "father",
+      "category": "Family",
+      "animacy": "person",
+      "plural": "Väter",
+      "pluralPattern": "umlaut",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Papa",
+      "gender": "m",
+      "hint": "dad",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Vati",
+      "gender": "m",
+      "hint": "dad",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Vorname",
+      "gender": "m",
+      "hint": "first name",
+      "category": "Family",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": true,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Zwilling",
+      "gender": "m",
+      "hint": "twin",
+      "category": "Family",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "family"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Federball",
+      "gender": "m",
+      "hint": "badminton",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Badminton",
+      "gender": "n",
+      "hint": "badminton",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Basketball",
+      "gender": "m",
+      "hint": "basketball",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Besuch",
+      "gender": "m",
+      "hint": "visit",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Briefmarke",
+      "gender": "f",
+      "hint": "stamp",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Buch",
+      "gender": "n",
+      "hint": "book",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Bücher",
+      "pluralPattern": "umlaut-er",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "CD-Spieler",
+      "gender": "m",
+      "hint": "CD player",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Computer",
+      "gender": "m",
+      "hint": "computer",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Computer",
+      "pluralPattern": "none",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Disco",
+      "gender": "f",
+      "hint": "disco",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Discos",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Finale",
+      "gender": "n",
+      "hint": "final",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fan",
+      "gender": "m",
+      "hint": "fan",
+      "category": "Hobbies",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fitness",
+      "gender": "f",
+      "hint": "fitness",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Foto",
+      "gender": "n",
+      "hint": "photo",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Fotos",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fotoapparat",
+      "gender": "m",
+      "hint": "camera",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Freundin",
+      "gender": "f",
+      "hint": "girlfriend",
+      "category": "Hobbies",
+      "animacy": "person",
+      "plural": "Freundinnen",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Fußball",
+      "gender": "m",
+      "hint": "football",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Gruppe",
+      "gender": "f",
+      "hint": "group",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Bewegung",
+      "gender": "f",
+      "hint": "movement",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hallenbad",
+      "gender": "n",
+      "hint": "indoor swimming pool",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hobby",
+      "gender": "n",
+      "hint": "hobby",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Hobbys",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Hockey",
+      "gender": "n",
+      "hint": "hockey",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Instrument",
+      "gender": "n",
+      "hint": "instrument",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Werkzeug",
+      "gender": "n",
+      "hint": "tool",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Jugendklub",
+      "gender": "m",
+      "hint": "youth club",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Karte",
+      "gender": "f",
+      "hint": "card",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Karten",
+      "pluralPattern": "en",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kassette",
+      "gender": "f",
+      "hint": "cassette",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Kino",
+      "gender": "n",
+      "hint": "cinema",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Kinos",
+      "pluralPattern": "s",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Klavier",
+      "gender": "n",
+      "hint": "piano",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mannschaft",
+      "gender": "f",
+      "hint": "team",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Mitglied",
+      "gender": "n",
+      "hint": "member",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Musik",
+      "gender": "f",
+      "hint": "music",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Park",
+      "gender": "m",
+      "hint": "park",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rollschuh",
+      "gender": "m",
+      "hint": "roller skate",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Rugby",
+      "gender": "n",
+      "hint": "rugby",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schwimmbad",
+      "gender": "n",
+      "hint": "swimming pool",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Spiel",
+      "gender": "n",
+      "hint": "game",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Spiele",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Spielplatz",
+      "gender": "m",
+      "hint": "playground",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Sport",
+      "gender": "m",
+      "hint": "sport",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Stadion",
+      "gender": "n",
+      "hint": "stadium",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Stadt",
+      "gender": "f",
+      "hint": "town",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": "Städte",
+      "pluralPattern": "umlaut-e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tennis",
+      "gender": "n",
+      "hint": "tennis",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Theater",
+      "gender": "n",
+      "hint": "theatre",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": true,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Tischtennis",
+      "gender": "n",
+      "hint": "table tennis",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Verein",
+      "gender": "m",
+      "hint": "club",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Videospiel",
+      "gender": "n",
+      "hint": "video game",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Wettbewerb",
+      "gender": "m",
+      "hint": "competition",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Wochenende",
+      "gender": "n",
+      "hint": "weekend",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Zeitschrift",
+      "gender": "f",
+      "hint": "magazine",
+      "category": "Hobbies",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Abenteuer",
+      "gender": "n",
+      "hint": "adventure",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Anzeige",
+      "gender": "f",
+      "hint": "advertisement",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Ausflug",
+      "gender": "m",
+      "hint": "trip",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Ausweis",
+      "gender": "m",
+      "hint": "identity card",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Dokumentarfilm",
+      "gender": "m",
+      "hint": "documentary",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Eingang",
+      "gender": "m",
+      "hint": "entrance",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Auftritt",
+      "gender": "m",
+      "hint": "entrance",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Eintrittsgeld",
+      "gender": "n",
+      "hint": "entrance fee",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Film",
+      "gender": "m",
+      "hint": "film",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": "Filme",
+      "pluralPattern": "e",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Freizeit",
+      "gender": "f",
+      "hint": "leisure",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Vernunft",
+      "gender": "f",
+      "hint": "reason",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Horrorfilm",
+      "gender": "m",
+      "hint": "horror movie",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Auskunft",
+      "gender": "f",
+      "hint": "information desk",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Informationsschalter",
+      "gender": "m",
+      "hint": "information desk",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Komödie",
+      "gender": "f",
+      "hint": "comedy",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Konzert",
+      "gender": "n",
+      "hint": "concert",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Krimi",
+      "gender": "m",
+      "hint": "crime film",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Liebesgeschichte",
+      "gender": "f",
+      "hint": "romance",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Lied",
+      "gender": "n",
+      "hint": "song",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": "Lieder",
+      "pluralPattern": "er",
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Liste",
+      "gender": "f",
+      "hint": "list",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Nachrichten",
+      "gender": "f",
+      "hint": "news",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Nachricht",
+      "gender": "f",
+      "hint": "news",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Pop",
+      "gender": "m",
+      "hint": "pop",
+      "category": "Entertainment",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "entertainment"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Belgier",
+      "gender": "m",
+      "hint": "Belgian",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Engländer",
+      "gender": "m",
+      "hint": "English man",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Engländerin",
+      "gender": "f",
+      "hint": "English woman",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Franzose",
+      "gender": "m",
+      "hint": "French man",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": true,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Französin",
+      "gender": "f",
+      "hint": "French woman",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Holländer",
+      "gender": "m",
+      "hint": "Dutch man",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Holländerin",
+      "gender": "f",
+      "hint": "Dutch woman",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Ire",
+      "gender": "m",
+      "hint": "Irish man",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": true,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Irin",
+      "gender": "f",
+      "hint": "Irish woman",
+      "category": "Countries",
+      "animacy": "person",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Belgien",
+      "gender": "n",
+      "hint": "Belgium",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "England",
+      "gender": "n",
+      "hint": "England",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Frankreich",
+      "gender": "n",
+      "hint": "France",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Griechenland",
+      "gender": "n",
+      "hint": "Greece",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Niederlande",
+      "gender": "f",
+      "hint": "the Netherlands",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": true,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Österreich",
+      "gender": "n",
+      "hint": "Austria",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Portugal",
+      "gender": "n",
+      "hint": "Portugal",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schottland",
+      "gender": "n",
+      "hint": "Scotland",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Schweiz",
+      "gender": "f",
+      "hint": "Switzerland",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Spanien",
+      "gender": "n",
+      "hint": "Spain",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Türkei",
+      "gender": "f",
+      "hint": "Turkey",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    },
+    {
+      "word": "Artikel",
+      "gender": "m",
+      "hint": "article",
+      "category": "Countries",
+      "animacy": "thing",
+      "plural": null,
+      "pluralPattern": null,
+      "pluralOnly": false,
+      "weakMasculine": false,
+      "place": false,
+      "level": 1,
+      "tags": [
+        "countries"
+      ],
+      "cefr": "A1",
+      "theme": null,
+      "frequency": null,
+      "exampleSentence": null
+    }
+  ]
+}

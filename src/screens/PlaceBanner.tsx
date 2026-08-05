@@ -13,6 +13,7 @@ const PLACE: Record<GameMode, Place> = {
     'plural': { name: 'The Counting Tower', building: 'tower' },
     'case-single': { name: "The Scholar's House", building: 'house' },
     'case-detect': { name: "The Ranger's Camp", building: 'tent' },
+    'story': { name: 'The Letter Cottage', building: 'house' },
 };
 
 // A pixel building drawn as a CSS grid of colored cells. Each string row is one

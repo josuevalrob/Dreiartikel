@@ -13,12 +13,16 @@ import type { GameMode } from '../hooks/useGameState';
 // only *renders* it. Adding a node/edge later needs no change here.
 
 // Virtual resolution. Low on purpose — every "pixel" is a chunky scaled-up
-// block, which is what gives the retro look. The canvas letterboxes to fit.
-const VW = 168;
-const VH = 200;
+// block, which is what gives the retro look. The canvas renders at this true
+// (wide) aspect and the MapScreen scrolls it HORIZONTALLY: the journey runs
+// left→right like a side-scroller, so the world is WIDE and SHORT. Height is
+// fixed (one screen tall); width is generous so the path has room to breathe
+// and the terrain isn't cramped.
+const VW = 440;
+const VH = 176;
 const TILE = 8; // px per terrain tile in virtual space
-const COLS = VW / TILE; // 21
-const ROWS = VH / TILE; // 25
+const COLS = VW / TILE; // 55
+const ROWS = VH / TILE; // 22
 
 // Palette — a warm SNES-overworld feel (grass greens, dirt road, blue water).
 const PAL = {
@@ -62,10 +66,12 @@ function mulberry(seed: number) {
 type Terrain = 'grass' | 'forest' | 'water' | 'mountain';
 
 /** Map a node's [0,100] position to a tile cell, kept inside a safe margin so
- *  buildings never clip the edge. */
+ *  buildings never clip the edge. A wider inset on x leaves road run-in/run-out
+ *  room at both ends of the long horizontal world; a tighter band on y keeps the
+ *  trail compact (nodes wiggle just above/below it, they don't scatter). */
 function nodeCell(node: MapNode): { col: number; row: number } {
-    const col = Math.round((node.x / 100) * (COLS - 5)) + 2;
-    const row = Math.round((node.y / 100) * (ROWS - 5)) + 2;
+    const col = Math.round((node.x / 100) * (COLS - 7)) + 3;
+    const row = Math.round((node.y / 100) * (ROWS - 6)) + 3;
     return { col, row };
 }
 
@@ -90,6 +96,7 @@ function buildingFor(mode: GameMode): 'castle' | 'tower' | 'house' | 'camp' {
         case 'plural': return 'tower';
         case 'case-single': return 'house';
         case 'case-detect': return 'camp';
+        case 'story': return 'house';   // a cosy place to read a letter
     }
 }
 
@@ -142,21 +149,35 @@ export function createMapScene(canvas: HTMLCanvasElement, onSelect: (id: string)
         ]);
 
     // ── Terrain ──────────────────────────────────────────────────────────
-    // Seeded so the world is identical every mount.
+    // Seeded so the world is identical every mount. The scenery (lakes, mountain
+    // ridges, forests) is procedural DECORATION — it fills the world around the
+    // authored path; it isn't part of map.json. Across the wide horizontal world
+    // we scatter a few lakes and a couple of mountain ridges along the length so
+    // it doesn't clump in one corner, then sprinkle forest in the gaps.
     const rnd = mulberry(1337);
     const grid: Terrain[][] = [];
     for (let r = 0; r < ROWS; r++) {
         grid[r] = [];
         for (let c = 0; c < COLS; c++) grid[r][c] = 'grass';
     }
-    // A lake in the lower-left.
-    const lake = { col: 3, row: ROWS - 5, rc: 2.6 };
-    // A mountain ridge upper-right.
+    // Lakes distributed along the bottom band of the long world.
+    const lakes = [
+        { col: Math.round(COLS * 0.18), row: ROWS - 4, rc: 2.4 },
+        { col: Math.round(COLS * 0.5), row: ROWS - 3, rc: 1.8 },
+        { col: Math.round(COLS * 0.82), row: ROWS - 4, rc: 2.2 },
+    ];
+    // Mountain ridges hugging the top edge at a couple of points along the length.
+    const ridges = [
+        { col: Math.round(COLS * 0.34), halfW: 4 },
+        { col: Math.round(COLS * 0.7), halfW: 5 },
+    ];
+    const inRidge = (c: number) => ridges.some(g => Math.abs(c - g.col) <= g.halfW);
     for (let r = 0; r < ROWS; r++) {
         for (let c = 0; c < COLS; c++) {
-            const dl = Math.hypot(c - lake.col, r - lake.row);
-            if (dl < lake.rc + rnd() * 0.8) grid[r][c] = 'water';
-            else if (c > COLS - 4 && r < 5 && rnd() > 0.3) grid[r][c] = 'mountain';
+            // Inside ANY lake's radius (each carries its own rc) → water.
+            const inLake = lakes.some(l => Math.hypot(c - l.col, r - l.row) < l.rc + rnd() * 0.8);
+            if (inLake) grid[r][c] = 'water';
+            else if (r < 3 && inRidge(c) && rnd() > 0.3) grid[r][c] = 'mountain';
             else if (rnd() > 0.86) grid[r][c] = 'forest';
         }
     }
